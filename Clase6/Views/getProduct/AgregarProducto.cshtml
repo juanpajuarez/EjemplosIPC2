@@ -1,0 +1,24 @@
+﻿@model Clase6.Models.ViewModels.addProductViewModel
+@{
+    ViewBag.Title = "AgregarProducto";
+}
+
+<h2>AgregarProducto</h2>
+
+@using (Html.BeginForm("AgregarProducto", "getProduct", FormMethod.Post))
+{
+<div class="col">
+    @Html.LabelFor(d => d.nombre)
+    @Html.TextBoxFor(d => d.nombre, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(d =>d.nombre,"",new { @class="alert"})<br />
+    @Html.LabelFor(d => d.precio)
+    @Html.TextBoxFor(d => d.precio, "", new { @class = "form-control" })
+    @Html.LabelFor(d => d.categoria)
+    @Html.TextBoxFor(d => d.categoria, "", new { @class = "form-control" })<br />
+
+    <div>
+        <input type="submit" class="btn btn-primary" value="Agregar" />
+    </div>
+
+</div>
+}

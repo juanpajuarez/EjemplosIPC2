@@ -1,0 +1,28 @@
+﻿@model List<Clase6.Models.ViewModels.getProductViewModel>
+@{
+    ViewBag.Title = "getProductos";
+}
+
+<h2>getProductos</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    @foreach (var producto in Model)
+    {
+        <tr>
+            <td>@producto.nombre</td>
+            <td>@producto.precio</td>
+            <td>@producto.categoria</td>
+        </tr>
+    }
+</table>
+
+<div>
+    <a href="~/getProduct/AgregarProducto" class="btn btn-primary">Agregar</a>
+</div>
